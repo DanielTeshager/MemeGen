@@ -90,9 +90,9 @@ def meme_post():
             with open('./tmp/temp1.jpg', 'wb') as f:
                 r.raw.decode_content = True
                 shutil.copyfileobj(r.raw, f)
-                path = meme.make_meme('./tmp/temp1.jpg',body, author)
-                os.remove('./tmp/temp1.jpg')
-                return render_template('meme.html', path=path)
+            path = meme.make_meme('./tmp/temp1.jpg',body, author)
+            os.remove('./tmp/temp1.jpg')
+            return render_template('meme.html', path=path)
         else:
             raise('Unable to download the requested image file')
 
